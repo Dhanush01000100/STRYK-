@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRYK - Premium Football Jerseys</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">STRYK</a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Categories <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" data-category="premier-league">Premier League</a></li>
+                        <li><a href="#" data-category="la-liga">La Liga</a></li>
+                        <li><a href="#" data-category="serie-a">Serie A</a></li>
+                        <li><a href="#" data-category="bundesliga">Bundesliga</a></li>
+                        <li><a href="#" data-category="ligue-1">Ligue 1</a></li>
+                        <li><a href="#" data-category="retro">Retro Jerseys</a></li>
+                        <li><a href="#" data-category="national">National Teams</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-container" id="mobileMenuContainer">
+        <ul class="mobile-menu">
+            <li><a href="#">Home</a></li>
+            <li class="mobile-dropdown">
+                <a href="#">Categories <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="#" data-category="premier-league">Premier League</a></li>
+                    <li><a href="#" data-category="la-liga">La Liga</a></li>
+                    <li><a href="#" data-category="serie-a">Serie A</a></li>
+                    <li><a href="#" data-category="bundesliga">Bundesliga</a></li>
+                    <li><a href="#" data-category="ligue-1">Ligue 1</a></li>
+                    <li><a href="#" data-category="retro">Retro Jerseys</a></li>
+                    <li><a href="#" data-category="national">National Teams</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>ELEVATE YOUR GAME</h1>
+        <p>Discover premium football jerseys from top clubs around the world. Authentic designs, superior quality, and unmatched comfort for the ultimate fan experience.</p>
+        <a href="#jerseys" class="cta-btn">SHOP NOW</a>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2 class="section-title">SHOP BY CATEGORY</h2>
+        <div class="categories-grid">
+            <div class="category-card" data-category="premier-league">
+                <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Premier League">
+                <h3>Premier League</h3>
+            </div>
+            <div class="category-card" data-category="la-liga">
+                <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="La Liga">
+                <h3>La Liga</h3>
+            </div>
+            <div class="category-card" data-category="serie-a">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Serie A">
+                <h3>Serie A</h3>
+            </div>
+            <div class="category-card" data-category="bundesliga">
+                <img src="https://images.unsplash.com/photo-1579952363872-3f075d35618d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Bundesliga">
+                <h3>Bundesliga</h3>
+            </div>
+            <div class="category-card" data-category="ligue-1">
+                <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ligue 1">
+                <h3>Ligue 1</h3>
+            </div>
+            <div class="category-card" data-category="retro">
+                <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Retro Jerseys">
+                <h3>Retro Jerseys</h3>
+            </div>
+            <div class="category-card" data-category="national">
+                <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="National Teams">
+                <h3>National Teams</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jerseys Grid -->
+    <section class="jerseys-container" id="jerseys">
+        <h2 class="section-title">FEATURED JERSEYS</h2>
+        <div class="jerseys-grid" id="jerseysGrid">
+            <!-- Jersey cards will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically loaded here -->
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h3>Checkout</h3>
+                <span class="close-checkout" id="closeCheckout">&times;</span>
+            </div>
+            <div class="checkout-body">
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <textarea id="address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="place-order-btn">PLACE ORDER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-content">
+            <div class="confirmation-header">
+                <i class="fas fa-check-circle"></i>
+                <h3>Order Confirmed!</h3>
+            </div>
+            <div class="confirmation-body">
+                <p>Thank you for your purchase!</p>
+                <p>Your order has been placed successfully.</p>
+                <p>Order ID: <span id="orderId">STRYK-XXXXXX</span></p>
+                <p>We'll send a confirmation email shortly.</p>
+            </div>
+            <button class="continue-shopping-btn" id="continueShopping">CONTINUE SHOPPING</button>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">CONTACT US</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Football Street, Jersey City</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@stryk.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="send-message-btn">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <h2 class="section-title">ABOUT STRYK</h2>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="About STRYK">
+            </div>
+            <div class="about-text">
+                <h3>Our Story</h3>
+                <p>STRYK was founded in 2020 with a passion for football and fashion. We believe every fan deserves access to high-quality, authentic jerseys at affordable prices.</p>
+                <p>Our team consists of football enthusiasts who carefully curate each jersey in our collection. We work directly with manufacturers to ensure authenticity and quality.</p>
+                <p>Whether you're looking for the latest season's jersey or a rare retro piece, STRYK has got you covered.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="#" class="logo">STRYK</a>
+                <p>Premium Football Jerseys</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#jerseys">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#" data-category="premier-league">Premier League</a></li>
+                    <li><a href="#" data-category="la-liga">La Liga</a></li>
+                    <li><a href="#" data-category="serie-a">Serie A</a></li>
+                    <li><a href="#" data-category="bundesliga">Bundesliga</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <p>Subscribe for updates and exclusive offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2023 STRYK. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
