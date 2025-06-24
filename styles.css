@@ -1101,4 +1101,21 @@ footer {
     .cart-sidebar {
         width: 100%;
     }
+    /* Add to styles.css */
+.category-card.active {
+    border: 2px solid var(--accent-color);
+    transform: translateY(-5px);
+}
+
+[data-category].active {
+    color: var(--accent-color);
+}
+
+.no-jerseys {
+    text-align: center;
+    grid-column: 1 / -1;
+    font-size: 1.2rem;
+    color: #aaa;
+    padding: 2rem;
+}
 }
