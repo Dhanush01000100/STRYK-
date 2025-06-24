@@ -243,3 +243,70 @@ const jerseys = [
 ];
 
 // ... rest of the script.js remains the same ...
+
+// ... (keep all the jersey data and other functions the same) ...
+
+// Update the setupEventListeners function:
+function setupEventListeners() {
+    // ... (keep other event listeners the same) ...
+
+    // Category filtering - Desktop
+    document.querySelectorAll('.category-card, [data-category]').forEach(element => {
+        element.addEventListener('click', (e) => {
+            e.preventDefault();
+            const category = element.getAttribute('data-category');
+            filterJerseysByCategory(category);
+            
+            // Close mobile menu if open
+            mobileMenuContainer.classList.remove('active');
+        });
+    });
+
+    // Mobile dropdown category filtering
+    document.querySelectorAll('.mobile-dropdown-menu a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const category = link.getAttribute('data-category');
+            filterJerseysByCategory(category);
+            mobileMenuContainer.classList.remove('active');
+        });
+    });
+}
+
+// New function to filter jerseys by category
+function filterJerseysByCategory(category) {
+    currentCategory = category;
+    loadJerseys();
+    
+    // Scroll to jerseys section
+    document.getElementById('jerseys').scrollIntoView({ behavior: 'smooth' });
+    
+    // Update active state on category elements
+    document.querySelectorAll('.category-card, [data-category]').forEach(el => {
+        el.classList.remove('active');
+        if (el.getAttribute('data-category') === category) {
+            el.classList.add('active');
+        }
+    });
+}
+
+// Update the loadJerseys function:
+function loadJerseys() {
+    jerseysGrid.innerHTML = '';
+    
+    const filteredJerseys = currentCategory === 'all' 
+        ? jerseys 
+        : jerseys.filter(jersey => jersey.category === currentCategory);
+    
+    if (filteredJerseys.length === 0) {
+        jerseysGrid.innerHTML = '<p class="no-jerseys">No jerseys found in this category</p>';
+        return;
+    }
+
+    filteredJerseys.forEach(jersey => {
+        // ... (keep the same jersey card creation code) ...
+    });
+}
+
+// Initialize with all jerseys
+let currentCategory = 'all';
